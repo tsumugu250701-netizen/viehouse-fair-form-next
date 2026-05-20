@@ -84,8 +84,11 @@ export default function Page() {
 
                 <Question title="Q5. プレゼントの応募を希望しますか？">
                   <label className="choice giftChoice">
-                    <input type="checkbox" name={ENTRY.gift} value="希望する（モデルハウスご来場でお渡しいたします）" defaultChecked />
-                    <span>希望する（モデルハウスご来場でお渡しいたします）</span>
+                    <input
+  type="checkbox"
+  name={ENTRY.gift}
+  value="希望する（モデルハウスご来場でお渡しいたします）"
+/>
                   </label>
                 </Question>
 
