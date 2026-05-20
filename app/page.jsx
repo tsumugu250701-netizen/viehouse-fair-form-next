@@ -6,7 +6,8 @@ import { useState } from 'react';
 // 1. Googleフォームを作成
 // 2. フォームURLの /viewform を /formResponse に変更
 // 3. 各質問の entry.xxxxx を下記に設定
-const GOOGLE_FORM_ACTION = '';
+const GOOGLE_FORM_ACTION =
+  "https://docs.google.com/forms/d/e/1FAIpQLScW2DTj4ptbYi_nr1PuiFvpCLV-D4x-DJ08T_j365l8hIxu5w/formResponse";
 const ENTRY = {
   name: "entry.972939221",
   phone: "entry.417934510",
