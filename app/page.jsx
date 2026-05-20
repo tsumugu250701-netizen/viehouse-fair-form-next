@@ -26,9 +26,11 @@ const interests = ['デザイン', '平屋', '自然素材', '高性能住宅', 
 export default function Page() {
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = async (e) => {
-    if (!GOOGLE_FORM_ACTION) return;
-    e.preventDefault();
+ const handleSubmit = () => {
+  setTimeout(() => {
+    alert("送信ありがとうございました！");
+  }, 500);
+};
     const form = e.currentTarget;
     const data = new FormData(form);
     try {
