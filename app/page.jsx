@@ -85,9 +85,16 @@ export default function Page() {
                   <RadioGroup name={ENTRY.contact} items={['電話', 'メール', 'どれでもOK']} />
                 </Question>
 
-                <Question title="Q5. プレゼントの応募を希望しますか？">
-                  <label className="choice giftChoice">
-                    <input
+               <Question title="Q5. プレゼントの応募を希望しますか？">
+  <label className="choice giftChoice">
+    <input
+      type="checkbox"
+      name={ENTRY.gift}
+      value="希望する（モデルハウスご来場でお渡しいたします）"
+    />
+    <span>希望する（モデルハウスご来場でお渡しいたします）</span>
+  </label>
+</Question>
   type="checkbox"
   name={ENTRY.gift}
   value="希望する（モデルハウスご来場でお渡しいたします）"
