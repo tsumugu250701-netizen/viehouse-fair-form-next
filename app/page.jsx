@@ -17,6 +17,7 @@ const ENTRY = {
   modelhouse: "entry.1340301750",
   contact: "entry.375609906",
   gift: "entry.1203632369",
+  message: "entry.807976969",
 };
 
 const sources = ['イエタテフェア', 'Instagram', 'YouTube', 'TikTok', 'Google検索', 'ご紹介', 'その他'];
