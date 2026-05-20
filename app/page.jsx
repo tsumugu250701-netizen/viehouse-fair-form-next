@@ -8,15 +8,14 @@ import { useState } from 'react';
 // 3. 各質問の entry.xxxxx を下記に設定
 const GOOGLE_FORM_ACTION = '';
 const ENTRY = {
-  name: 'entry.NAME',
-  phone: 'entry.PHONE',
-  email: 'entry.EMAIL',
-  source: 'entry.SOURCE',
-  interest: 'entry.INTEREST',
-  modelhouse: 'entry.MODELHOUSE',
-  contact: 'entry.CONTACT',
-  gift: 'entry.GIFT',
-  message: 'entry.MESSAGE',
+  name: "entry.972939221",
+  phone: "entry.417934510",
+  email: "entry.1291569393",
+  source: "entry.1952441446",
+  interest: "entry.1331030282",
+  modelhouse: "entry.1340301750",
+  contact: "entry.375609906",
+  gift: "entry.1203632369",
 };
 
 const sources = ['イエタテフェア', 'Instagram', 'YouTube', 'TikTok', 'Google検索', 'ご紹介', 'その他'];
