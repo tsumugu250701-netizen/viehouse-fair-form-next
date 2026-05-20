@@ -99,11 +99,11 @@ export default function Page() {
   name={ENTRY.gift}
   value="希望する（モデルハウスご来場でお渡しいたします）"
 />
-                  </label>
-                </Question>
-
-                <textarea name={ENTRY.message} className="message" placeholder="ご質問・ご要望があればご入力ください"></textarea>
-              </div>
+                 <textarea
+  name={ENTRY.message}
+  className="message"
+  placeholder="ご質問・ご要望があればご入力ください"
+/>
             </div>
 
             <button className="submitBtn" type="submit">アンケートを送信する <span>›</span></button>
