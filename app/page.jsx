@@ -121,21 +121,32 @@ export default function Page() {
                 <RadioGroup name={ENTRY.contact} value={undefined} onChange={() => {}} items={['電話', 'メール', 'どれでもOK']} />
               </div>
 
-              {showGift && (
-                <div className="question giftQuestion">
-                  <h2>Q5. 5千円相当 選べるプレゼントをご希望の方はお選びください。</h2>
-                  <p className="giftNote">モデルハウス見学をご希望の方限定の特典です。</p>
-                  <div className="giftGrid">
-                    {gifts.map((gift) => (
-                      <label className={`giftCard ${selectedGift === gift.value ? 'selected' : ''}`} key={gift.value}>
-                        <input type="radio" name={ENTRY.gift} value={gift.value} checked={selectedGift === gift.value} onChange={() => setSelectedGift(gift.value)} />
-                        <img src={gift.img} alt={gift.title} />
-                        <strong>{gift.title}</strong>
-                        <span>{gift.desc}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+<div className="question giftQuestion">
+  <h2>Q5. 5千円相当 選べるギフトをお選びください。</h2>
+  <p className="giftNote">
+    ※プレゼントはモデルハウスへご見学いただいた際にお渡しいたします。
+  </p>
+
+  <div className="giftGrid">
+    {gifts.map((gift) => (
+      <label
+        className={`giftCard ${selectedGift === gift.value ? 'selected' : ''}`}
+        key={gift.value}
+      >
+        <input
+          type="radio"
+          name={ENTRY.gift}
+          value={gift.value}
+          checked={selectedGift === gift.value}
+          onChange={() => setSelectedGift(gift.value)}
+        />
+        <img src={gift.img} alt={gift.title} />
+        <strong>{gift.title}</strong>
+        <span>{gift.desc}</span>
+      </label>
+    ))}
+  </div>
+</div>
               )}
 
               <div className="question">
