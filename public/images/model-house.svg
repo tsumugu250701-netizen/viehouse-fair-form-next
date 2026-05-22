@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
-<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bde0ff"/><stop offset="1" stop-color="#f4f0df"/></linearGradient><filter id="sh"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-opacity=".18"/></filter></defs>
-<rect width="1200" height="700" fill="url(#s)"/><path d="M0 510 C210 470 360 540 530 500 C720 455 900 510 1200 470 L1200 700 L0 700Z" fill="#b7b094"/>
-<g filter="url(#sh)" transform="translate(178 112)"><polygon points="80,160 518,62 870,164 431,258" fill="#58635c"/><polygon points="96,172 431,255 430,492 96,456" fill="#eff0eb"/><polygon points="430,255 852,166 852,445 430,492" fill="#919895"/><rect x="475" y="304" width="135" height="108" fill="#e7edf0"/><rect x="130" y="295" width="86" height="155" fill="#9d6535"/><rect x="662" y="283" width="115" height="88" fill="#e4ecef"/><path d="M430 255 L852 166 L852 238 L430 329Z" fill="#b8804d"/><rect x="92" y="458" width="760" height="38" fill="#d7d4c8"/></g>
-<g fill="#607344"><ellipse cx="160" cy="548" rx="120" ry="33"/><ellipse cx="1000" cy="532" rx="160" ry="40"/></g>
-</svg>
