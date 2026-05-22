@@ -60,33 +60,12 @@ function RadioGroup({ name, items, value, onChange }) {
   );
 }
 
-export default function Page() {
-  const [submitted, setSubmitted] = useState(false);
-  const [modelhouse, setModelhouse] = useState('');
-  const [selectedGift, setSelectedGift] = useState('');
-  const [contactMethod, setContactMethod] = useState('');
-
-  const showGift = modelhouse === 'ぜひ見学したい';
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  const form = e.currentTarget;
-  const formData = new FormData(form);
-  const params = new URLSearchParams();
-
-  for (const [key, value] of formData.entries()) {
-    params.append(key, value);
-  }
-
-  await fetch(GOOGLE_FORM_ACTION, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: params.toString(),
-  });
+const handleSubmit = () => {
+  setTimeout(() => {
+    setSubmitted(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 2500);
+};
 
   setSubmitted(true);
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -104,7 +83,13 @@ const handleSubmit = async (e) => {
             <h1>アンケートにご協力ください</h1>
             <p className="time">所要時間：約1分</p>
 
-            <form className="surveyForm" onSubmit={handleSubmit}>
+            <form
+  className="surveyForm"
+  onSubmit={handleSubmit}
+  action={GOOGLE_FORM_ACTION}
+  method="POST"
+  target="hidden_iframe"
+>
               <div className="basicFields">
                 <Field label="お名前" name={ENTRY.name} placeholder="例）山田 太郎" required />
                 <Field label="電話番号" name={ENTRY.phone} placeholder="例）090-1234-5678" required />
@@ -178,7 +163,13 @@ const handleSubmit = async (e) => {
 
               <p className="privacy">ご入力いただいた個人情報は、厳重に管理し、ご連絡・ご案内目的以外には使用いたしません。</p>
               <button className="submitBtn" type="submit">アンケートを送信する <span>›</span></button>
-            </form>
+            </form><form
+  className="surveyForm"
+  onSubmit={handleSubmit}
+  action={GOOGLE_FORM_ACTION}
+  method="POST"
+  target="hidden_iframe"
+>
           </section>
 
           <Footer />
