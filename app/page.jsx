@@ -172,9 +172,15 @@ function Footer() {
   return (
     <section className="footerBlock">
       <div className="footerReserve">
-        <h2>モデルハウス見学のご予約も受付中！</h2>
+        <h2>モデルハウス動画公開中！</h2>
         <p>ご希望の方は、スタッフまでお気軽にお声がけください。</p>
-        <a href="#survey">モデルハウスの詳細はこちら <span>›</span></a>
+        <a
+  href="https://youtu.be/sgWQRtHu3s4"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  モデルハウス動画はこちら <span>›</span>
+</a>
       </div>
       <img src="/footer-house.jpg" alt="モデルハウス" className="footerHouse" />
       <div className="footerContact">
