@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bfe0fb"/><stop offset=".62" stop-color="#eef6fb"/><stop offset="1" stop-color="#f3efe5"/></linearGradient>
+    <linearGradient id="wall" x1="0" x2="1"><stop stop-color="#e4b164"/><stop offset=".45" stop-color="#f0c985"/><stop offset="1" stop-color="#d8954b"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#372817" flood-opacity=".18"/></filter>
+    <pattern id="stucco" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M0 34 Q42 5 90 38M2 82 Q48 50 92 84" fill="none" stroke="#c27c3b" stroke-opacity=".14" stroke-width="5"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <g opacity=".72">
+    <circle cx="130" cy="125" r="56" fill="#fff" opacity=".38"/><circle cx="205" cy="110" r="78" fill="#fff" opacity=".5"/><circle cx="300" cy="125" r="58" fill="#fff" opacity=".38"/>
+    <circle cx="1190" cy="170" r="86" fill="#fff" opacity=".42"/><circle cx="1290" cy="160" r="55" fill="#fff" opacity=".32"/>
+  </g>
+  <rect x="0" y="745" width="1600" height="255" fill="#d5d0bd"/>
+  <path d="M0 760 C280 710 425 790 655 740 C890 690 1095 765 1600 705 L1600 1000 L0 1000Z" fill="#c6c0a8"/>
+  <g fill="#6d7a47" opacity=".65">
+    <ellipse cx="124" cy="762" rx="80" ry="26"/><ellipse cx="1375" cy="745" rx="160" ry="42"/><ellipse cx="1455" cy="800" rx="96" ry="32"/>
+  </g>
+  <g filter="url(#shadow)" transform="translate(394 198)">
+    <polygon points="168,170 810,70 1215,230 1215,650 168,680" fill="#b26b2e" opacity=".38"/>
+    <polygon points="240,150 815,20 1210,170 625,285" fill="#8b5126"/>
+    <polygon points="253,173 820,52 1195,184 632,306" fill="#b86c33"/>
+    <polygon points="250,185 630,300 626,720 250,675" fill="url(#wall)"/>
+    <polygon points="626,300 1195,184 1195,626 626,720" fill="#e9b66e"/>
+    <polygon points="250,185 630,300 626,720 250,675" fill="url(#stucco)" opacity=".52"/>
+    <polygon points="626,300 1195,184 1195,626 626,720" fill="url(#stucco)" opacity=".38"/>
+    <g fill="#74451f">
+      <rect x="366" y="332" width="86" height="96" rx="4"/><rect x="495" y="358" width="86" height="96" rx="4"/><rect x="755" y="310" width="84" height="96" rx="4"/><rect x="925" y="278" width="84" height="96" rx="4"/><rect x="1042" y="404" width="76" height="92" rx="4"/>
+    </g>
+    <g fill="#f4e4bf">
+      <rect x="379" y="344" width="26" height="72"/><rect x="413" y="344" width="26" height="72"/><rect x="508" y="370" width="26" height="72"/><rect x="542" y="370" width="26" height="72"/>
+      <rect x="769" y="323" width="24" height="70"/><rect x="802" y="323" width="24" height="70"/><rect x="938" y="291" width="24" height="70"/><rect x="972" y="291" width="24" height="70"/><rect x="1054" y="416" width="22" height="68"/><rect x="1085" y="416" width="22" height="68"/>
+    </g>
+    <g stroke="#5d361b" stroke-width="8" stroke-linecap="round"><path d="M364 322l92-17"/><path d="M492 348l92-18"/><path d="M752 300l92-18"/><path d="M922 268l92-18"/><path d="M1038 396l86-18"/></g>
+    <rect x="435" y="515" width="112" height="160" rx="7" fill="#8c4f24"/><rect x="455" y="532" width="75" height="143" fill="#a76731"/><circle cx="523" cy="598" r="6" fill="#e8c880"/>
+    <rect x="834" y="485" width="122" height="142" rx="6" fill="#865024"/><rect x="848" y="500" width="94" height="126" fill="#b06c32"/>
+    <rect x="360" y="695" width="708" height="92" fill="#9b642e"/><rect x="332" y="677" width="780" height="28" fill="#bd7936"/>
+    <polygon points="268,678 628,721 626,760 268,720" fill="#c99455" opacity=".75"/>
+    <rect x="786" y="82" width="72" height="86" fill="#95521f"/><polygon points="770,84 874,62 866,90 776,108" fill="#70401d"/><rect x="800" y="102" width="42" height="48" fill="#3b3329"/>
+  </g>
+  <g fill="#425b34" opacity=".88">
+    <circle cx="141" cy="713" r="58"/><circle cx="202" cy="689" r="75"/><circle cx="1510" cy="706" r="105"/><circle cx="1330" cy="705" r="72"/>
+  </g>
+  <g stroke="#7a8954" stroke-width="10" stroke-linecap="round" opacity=".72"><path d="M95 735 C122 650 125 580 110 510"/><path d="M1400 760 C1392 670 1432 610 1505 560"/></g>
+</svg>
