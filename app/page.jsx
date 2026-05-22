@@ -146,8 +146,6 @@ export default function Page() {
       </label>
     ))}
   </div>
-</div>
-              )}
 
               <div className="question">
                 <h2>{showGift ? 'Q6.' : 'Q5.'} ご質問・ご要望があればご入力ください</h2>
