@@ -17,7 +17,15 @@ const ENTRY = {
   message: 'entry.807976969',
 };
 
-const sources = ['イエタテフェア', 'Instagram', 'YouTube', 'TikTok', 'Google検索', 'ご紹介', 'その他'];
+const sources = [
+  'イエタテフェア',
+  'Instagram',
+  'YouTube',
+  'TikTok',
+  'Google検索',
+  'ご紹介',
+  'その他',
+];
 
 const interests = [
   'デザイン',
@@ -77,8 +85,6 @@ function CheckGroup({ name, items }) {
 }
 
 function RadioGroup({ name, items, value, onChange }) {
-  const isControlled = value !== undefined && typeof onChange === 'function';
-
   return (
     <div className="radioRow">
       {items.map((item) => (
@@ -87,12 +93,8 @@ function RadioGroup({ name, items, value, onChange }) {
             type="radio"
             name={name}
             value={item}
-            {...(isControlled
-              ? {
-                  checked: value === item,
-                  onChange: () => onChange(item),
-                }
-              : {})}
+            checked={value === item}
+            onChange={() => onChange(item)}
           />
           <span>{item}</span>
         </label>
@@ -104,8 +106,10 @@ function RadioGroup({ name, items, value, onChange }) {
 export default function Page() {
   const [submitted, setSubmitted] = useState(false);
   const [modelhouse, setModelhouse] = useState('');
+  const [contactMethod, setContactMethod] = useState('');
   const [selectedGift, setSelectedGift] = useState('');
 
+  // 「ぜひ見学したい」を選んだ場合のみギフト選択を表示
   const showGift = modelhouse === 'ぜひ見学したい';
 
   const handleSubmit = () => {
@@ -137,7 +141,13 @@ export default function Page() {
               <div className="basicFields">
                 <Field label="お名前" name={ENTRY.name} placeholder="例）山田 太郎" required />
                 <Field label="電話番号" name={ENTRY.phone} placeholder="例）090-1234-5678" required />
-                <Field label="メールアドレス" name={ENTRY.email} placeholder="例）example@mail.com" type="email" required />
+                <Field
+                  label="メールアドレス"
+                  name={ENTRY.email}
+                  placeholder="例）example@mail.com"
+                  type="email"
+                  required
+                />
               </div>
 
               <div className="question">
@@ -161,7 +171,9 @@ export default function Page() {
                   value={modelhouse}
                   onChange={(value) => {
                     setModelhouse(value);
-                    if (value !== 'ぜひ見学したい') setSelectedGift('');
+                    if (value !== 'ぜひ見学したい') {
+                      setSelectedGift('');
+                    }
                   }}
                   items={['ぜひ見学したい', '話だけ聞いてみたい', '今回は情報収集のみ']}
                 />
@@ -170,10 +182,16 @@ export default function Page() {
               {showGift && (
                 <div className="question giftQuestion">
                   <h2>Q4. 5千円相当 選べるギフトをお選びください。</h2>
-                  <p className="giftNote">※プレゼントはモデルハウスへご見学いただいた際にお渡しいたします。</p>
+                  <p className="giftNote">
+                    ※プレゼントはモデルハウスへご見学いただいた際にお渡しいたします。
+                  </p>
+
                   <div className="giftGrid">
                     {gifts.map((gift) => (
-                      <label className={`giftCard ${selectedGift === gift.value ? 'selected' : ''}`} key={gift.value}>
+                      <label
+                        className={`giftCard ${selectedGift === gift.value ? 'selected' : ''}`}
+                        key={gift.value}
+                      >
                         <input
                           type="radio"
                           name={ENTRY.gift}
@@ -192,7 +210,12 @@ export default function Page() {
 
               <div className="question">
                 <h2>{showGift ? 'Q5.' : 'Q4.'} ご希望のご連絡方法を教えてください。</h2>
-                <RadioGroup name={ENTRY.contact} items={['電話', 'メール', 'どれでもOK']} />
+                <RadioGroup
+                  name={ENTRY.contact}
+                  value={contactMethod}
+                  onChange={setContactMethod}
+                  items={['電話', 'メール', 'どれでもOK']}
+                />
               </div>
 
               <div className="question">
