@@ -67,12 +67,12 @@ export default function Page() {
 
   const showGift = modelhouse === 'ぜひ見学したい';
 
-  const handleSubmit = () => {
-    setTimeout(() => {
-      setSubmitted(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 600);
-  };
+const handleSubmit = (e) => {
+  setTimeout(() => {
+    setSubmitted(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 2000);
+};
 
   return (
     <main className="page">
@@ -149,7 +149,7 @@ export default function Page() {
 </div>
 
               <div className="question">
-                <h2>{showGift ? 'Q6.' : 'Q5.'} ご質問・ご要望があればご入力ください</h2>
+                <h2>Q6. ご質問・ご要望があればご入力ください</h2>
                 <textarea name={ENTRY.message} className="message" placeholder="ご質問・ご要望があればご入力ください" />
               </div>
 
