@@ -71,12 +71,21 @@ export default function Page() {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const formData = new FormData(e.currentTarget);
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+  const params = new URLSearchParams();
+
+  for (const [key, value] of formData.entries()) {
+    params.append(key, value);
+  }
 
   await fetch(GOOGLE_FORM_ACTION, {
     method: 'POST',
     mode: 'no-cors',
-    body: formData,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: params.toString(),
   });
 
   setSubmitted(true);
