@@ -173,7 +173,7 @@ function Footer() {
     <section className="footerBlock">
       <div className="footerReserve">
         <h2>モデルハウス動画公開中！</h2>
-        <p>ご希望の方は、スタッフまでお気軽にお声がけください。</p>
+<p>モデルハウスの雰囲気や家づくりのこだわりを、動画でご体感ください。</p>
         <a
   href="https://youtu.be/sgWQRtHu3s4"
   target="_blank"
