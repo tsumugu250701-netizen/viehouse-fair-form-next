@@ -73,7 +73,7 @@ export default function Page() {
   const [modelhouse, setModelhouse] = useState('');
   const [selectedGift, setSelectedGift] = useState('');
 
-  const showGift = modelhouse === 'ぜひ見学したい' || modelhouse === '話だけ聞いてみたい';
+  const showGift = modelhouse === 'ぜひ見学したい';
 
   const handleSubmit = () => {
     setTimeout(() => {
@@ -118,7 +118,7 @@ export default function Page() {
                   value={modelhouse}
                   onChange={(value) => {
                     setModelhouse(value);
-                    if (value === '今回は情報収集のみ') setSelectedGift('');
+                    if (value !== 'ぜひ見学したい') setSelectedGift('');
                   }}
                   items={['ぜひ見学したい', '話だけ聞いてみたい', '今回は情報収集のみ']}
                 />
@@ -127,7 +127,10 @@ export default function Page() {
               {showGift && (
                 <div className="question giftQuestion">
                   <h2>Q4. 5千円相当 選べるギフトをお選びください。</h2>
-                  <p className="giftNote">モデルハウス見学をご希望の方限定の特典です。</p>
+                  <p className="giftNote">
+                    ※プレゼントはモデルハウスへご見学いただいた際にお渡しいたします。
+                  </p>
+
                   <div className="giftGrid">
                     {gifts.map((gift) => (
                       <label className={`giftCard ${selectedGift === gift.value ? 'selected' : ''}`} key={gift.value}>
