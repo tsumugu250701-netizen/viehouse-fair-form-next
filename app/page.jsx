@@ -115,18 +115,22 @@ export default function Page() {
                   items={['ぜひ見学したい', '話だけ聞いてみたい', '今回は情報収集のみ']}
                 />
               </div>
-<Question title="Q4. 5千円相当 選べるギフトをお選びください。">
+<div className="question">
+  <h2>Q4. 5千円相当 選べるギフトをお選びください。</h2>
   <RadioGroup
     name={ENTRY.gift}
+    value={selectedGift}
+    onChange={setSelectedGift}
     items={[
-      "towerカタログギフト",
-      "松阪牛カタログギフト",
-      "スターバックスギフト",
+      'towerカタログギフト',
+      '松阪牛カタログギフト',
+      'スターバックスギフト',
     ]}
   />
-</Question>
+</div>
+
               <div className="question">
-                <h2>Q4. ご希望のご連絡方法を教えてください。</h2>
+                <h2>Q5. ご希望のご連絡方法を教えてください。</h2>
                 <RadioGroup name={ENTRY.contact} value={undefined} onChange={() => {}} items={['電話', 'メール', 'どれでもOK']} />
               </div>
 
