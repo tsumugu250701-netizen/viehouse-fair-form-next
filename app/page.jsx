@@ -12,18 +12,63 @@ const ENTRY = {
   source: 'entry.1952441446',
   interest: 'entry.1331030282',
   modelhouse: 'entry.1340301750',
+  gift: 'entry.1203632369', // Googleフォームで変更したらここ差し替え
   contact: 'entry.375609906',
-  gift: 'entry.1203632369',
   message: 'entry.807976969',
 };
 
-const sources = ['イエタテフェア', 'Instagram', 'YouTube', 'TikTok', 'Google検索', 'ご紹介', 'その他'];
-const interests = ['デザイン', '平屋', '自然素材', '高性能住宅', '土地探し', '資金計画・住宅ローン', 'リフォーム・リノベーション', 'その他'];
-const gifts = [
-  { value: 'towerカタログギフト', title: 'towerカタログギフト', desc: '暮らしを彩るインテリア雑貨が豊富に掲載されたカタログギフト。', img: '/gift-tower.jpg' },
-  { value: '松阪牛カタログギフト', title: '松阪牛カタログギフト', desc: '日本を代表するブランド牛、松阪牛のカタログギフト。', img: '/gift-beef.jpg' },
-  { value: 'スターバックスギフト', title: 'スターバックスギフト', desc: '全国のスターバックス店舗で使えるギフトカード。', img: '/gift-starbucks.jpg' },
+const sources = [
+  'イエタテフェア',
+  'Instagram',
+  'YouTube',
+  'TikTok',
+  'Google検索',
+  'ご紹介',
+  'その他',
 ];
+
+const interests = [
+  'デザイン',
+  '平屋',
+  '自然素材',
+  '高性能住宅',
+  '土地探し',
+  '資金計画・住宅ローン',
+  'リフォーム・リノベーション',
+  'その他',
+];
+
+const gifts = [
+  {
+    value: 'towerカタログギフト',
+    title: 'towerカタログギフト',
+    desc: '暮らしを彩るインテリア雑貨が豊富に掲載されたカタログギフト。',
+    img: '/gift-tower.jpg',
+  },
+  {
+    value: '松阪牛カタログギフト',
+    title: '松阪牛カタログギフト',
+    desc: '日本を代表するブランド牛、松阪牛のカタログギフト。',
+    img: '/gift-beef.jpg',
+  },
+  {
+    value: 'スターバックスギフト',
+    title: 'スターバックスギフト',
+    desc: '全国のスターバックス店舗で使えるギフトカード。',
+    img: '/gift-starbucks.jpg',
+  },
+];
+
+export default function Page() {
+  const [submitted, setSubmitted] = useState(false);
+  const [modelhouse, setModelhouse] = useState('');
+  const [selectedGift, setSelectedGift] = useState('');
+
+  const handleSubmit = () => {
+    setTimeout(() => {
+      setSubmitted(true);
+    }, 500);
+  };
 
 function Field({ label, name, placeholder, type = 'text', required = false }) {
   return (
