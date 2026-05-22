@@ -64,14 +64,23 @@ export default function Page() {
   const [submitted, setSubmitted] = useState(false);
   const [modelhouse, setModelhouse] = useState('');
   const [selectedGift, setSelectedGift] = useState('');
+  const [contactMethod, setContactMethod] = useState('');
 
   const showGift = modelhouse === 'ぜひ見学したい';
 
-const handleSubmit = (e) => {
-  setTimeout(() => {
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 2000);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.currentTarget);
+
+  await fetch(GOOGLE_FORM_ACTION, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData,
+  });
+
+  setSubmitted(true);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
   return (
@@ -86,7 +95,7 @@ const handleSubmit = (e) => {
             <h1>アンケートにご協力ください</h1>
             <p className="time">所要時間：約1分</p>
 
-            <form className="surveyForm" onSubmit={handleSubmit} action={GOOGLE_FORM_ACTION} method="POST" target="hidden_iframe">
+            <form className="surveyForm" onSubmit={handleSubmit}>
               <div className="basicFields">
                 <Field label="お名前" name={ENTRY.name} placeholder="例）山田 太郎" required />
                 <Field label="電話番号" name={ENTRY.phone} placeholder="例）090-1234-5678" required />
@@ -118,7 +127,12 @@ const handleSubmit = (e) => {
 
               <div className="question">
                 <h2>Q4. ご希望のご連絡方法を教えてください。</h2>
-                <RadioGroup name={ENTRY.contact} value={undefined} onChange={() => {}} items={['電話', 'メール', 'どれでもOK']} />
+                <RadioGroup
+  name={ENTRY.contact}
+  value={contactMethod}
+  onChange={setContactMethod}
+  items={['電話', 'メール', 'どれでもOK']}
+/>
               </div>
 
 <div className="question giftQuestion">
@@ -156,7 +170,6 @@ const handleSubmit = (e) => {
               <p className="privacy">ご入力いただいた個人情報は、厳重に管理し、ご連絡・ご案内目的以外には使用いたしません。</p>
               <button className="submitBtn" type="submit">アンケートを送信する <span>›</span></button>
             </form>
-            <iframe name="hidden_iframe" title="hidden_iframe" style={{ display: 'none' }} />
           </section>
 
           <Footer />
